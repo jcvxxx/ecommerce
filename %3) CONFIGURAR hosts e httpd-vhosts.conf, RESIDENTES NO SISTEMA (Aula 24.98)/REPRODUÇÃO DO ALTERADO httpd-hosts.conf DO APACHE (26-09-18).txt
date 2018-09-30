@@ -1,0 +1,34 @@
+JCV = Este é apenas os Complementos da AULA 21.87 e do Projeto da LOJA (respectivamente).
+===============================================================================================
+
+##<VirtualHost *:80>
+    ##ServerAdmin webmaster@dummy-host2.example.com
+    ##DocumentRoot "C:/xampp/htdocs/website"
+    ##ServerName local.cursophp7.com.br
+    ##ErrorLog "logs/dummy-host2.example.com-error.log"
+    ##CustomLog "logs/dummy-host2.example.com-access.log" common
+	##<Directory "C:/xampp/htdocs/website">
+        ##Order allow, deny
+        ##Allow from all
+        ##Require all granted
+     ##</Directory>
+##</VirtualHost>
+
+
+
+<VirtualHost *:80>
+    ServerAdmin webmaster@hcode.com.br
+    DocumentRoot "C:/ecommerce"
+    ServerName www.hcodecommerce.com.br
+    ErrorLog "logs/dummy-host2.example.com-error.log"
+    CustomLog "logs/dummy-host2.example.com-access.log" common
+	<Directory "C:/ecommerce">
+        Require all granted
+
+        RewriteEngine On
+
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^ index.php [QSA,L]
+	</Directory>
+</VirtualHost>
